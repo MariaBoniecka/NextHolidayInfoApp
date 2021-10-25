@@ -1,0 +1,265 @@
+{
+	"variables": [],
+	"info": {
+		"name": "NextHolidaysApp",
+		"_postman_id": "fbec1fb5-3633-8f8e-ba7f-28a856b989a9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get holiday names",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/nextHolidays?date=2020-08-31&country1=GB&country2=PL",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nextHolidays"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-08-31",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country1",
+							"value": "GB",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country2",
+							"value": "PL",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "month",
+							"value": "10",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong country name",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/nextHolidays?date=2020-08-31&country1=GB&country2=OO",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nextHolidays"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-08-31",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country1",
+							"value": "GB",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country2",
+							"value": "OO",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "month",
+							"value": "10",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Not supported date",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/nextHolidays?date=2021-08-31&country1=GB&country2=PL",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nextHolidays"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2021-08-31",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country1",
+							"value": "GB",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country2",
+							"value": "PL",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid date format",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/nextHolidays?date=2020-18-01&country1=GB&country2=PL",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nextHolidays"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-18-01",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country1",
+							"value": "GB",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country2",
+							"value": "PL",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Corner case - last day of the year",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/nextHolidays?date=2020-12-31&country1=GB&country2=PL",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nextHolidays"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-12-31",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country1",
+							"value": "GB",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country2",
+							"value": "PL",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Missing parameter",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/nextHolidays?date=2020-08-31&country1=GB",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nextHolidays"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-08-31",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "country1",
+							"value": "GB",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
